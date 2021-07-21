@@ -16,7 +16,7 @@
   \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar test = function test() {\n  return 'Hello World';\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (test);\n\n//# sourceURL=webpack://mdsspc/./client/src/components/App.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar hello = function hello() {\n  return 'Hello World';\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (hello);\n\n//# sourceURL=webpack://mdsspc/./client/src/components/App.jsx?");
 
 /***/ }),
 

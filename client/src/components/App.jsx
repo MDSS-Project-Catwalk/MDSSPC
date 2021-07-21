@@ -1,6 +1,6 @@
-const test = () => {
+const hello = () => {
   return 'Hello World';
 };
 
 
-export default test;
+export default hello;
