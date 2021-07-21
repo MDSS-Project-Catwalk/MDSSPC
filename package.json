@@ -1,0 +1,40 @@
+{
+  "name": "mdsspc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server/index.js",
+    "build": "webpack -w --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mzeinh/MDSSPC.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mzeinh/MDSSPC/issues"
+  },
+  "homepage": "https://github.com/mzeinh/MDSSPC#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.31.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-react": "^7.24.0",
+    "install": "^0.13.0",
+    "npm": "^7.20.0",
+    "webpack": "^5.45.1",
+    "webpack-cli": "^4.7.2"
+  }
+}
