@@ -12,7 +12,7 @@ app.use('/', express.static('./client/dist'));
 // products
 
 app.get('/products', (req, res) => {
-  axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hr-sfo/products/')
+  axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hr-sfo/products/', { params: req.query })
     .then((result) => {
       res.send(result.data);
     })
@@ -44,7 +44,7 @@ app.get('/products/:product_id/:end_point', (req, res) => {
 // reviews
 
 app.get('/reviews', (req, res) => {
-  axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hr-sfo/reviews', {params: req.query})
+  axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hr-sfo/reviews', { params: req.query })
     .then((result) => {
       res.send(result.data);
     })
@@ -71,7 +71,7 @@ and reporting a review is to be created.  */
 // Questions
 
 app.get('/qa/questions', (req, res) => {
-  axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hr-sfo/qa/questions', {params: req.query})
+  axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hr-sfo/qa/questions', { params: req.query })
     .then((result) => {
       res.send(result.data);
     })
