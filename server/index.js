@@ -54,7 +54,7 @@ app.get('/reviews', (req, res) => {
 });
 
 app.get('/reviews/meta', (req, res) => {
-  axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hr-sfo/reviews/meta', {params: req.query})
+  axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hr-sfo/reviews/meta', { params: req.query })
     .then((result) => {
       res.send(result.data);
     })
@@ -82,7 +82,7 @@ app.get('/qa/questions', (req, res) => {
 
 app.get('/qa/questions/:question_id/answers', (req, res) => {
   axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hr-sfo/qa/questions/${req.params.question_id}/answers`,
-    {params: req.query})
+    { params: req.query })
     .then((result) => {
       res.send(result.data);
     })
