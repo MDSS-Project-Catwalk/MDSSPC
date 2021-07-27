@@ -21,7 +21,7 @@ Run the following commands to start working
 
 **To install dependencies**
 
-1. yarn install
+1. yarn install / brew install yarn
 
 
 **To run the compiler:**
