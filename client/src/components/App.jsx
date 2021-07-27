@@ -25,18 +25,61 @@ class Overview extends React.Component {
                   <li><a href="#">Search</a></li>
                   <li><a href="#">Log In</a></li>
                   <li><a href="#">Sign Up</a></li>
-                  <li><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
+                  <li><a href="#"><i className="fas fa-shopping-bag"></i></a></li>
                 </ul>
               </div>
             </header>
+            <div className='row contents-container'>
             <ul className='breadcrumbs'>
               <li className='breadcrumb'>Home</li>
               <li className='breadcrumb'>Women</li>
               <li className='breadcrumb'>Women's Sale</li>
               <li className='breadcrumb breadcrumb-disabled'>The Off-The-Shoulder-Bodysuit</li>
             </ul>
-            <div className='row contents-container'>
-
+              <div className='col-xs-12'></div>
+                <div className='three-col-container'></div>
+                  <div className='row'></div>
+                    <div className='col-xs-8 product-gallery'>
+                      <div className='product-gallery__thumbs-container'>
+                        <div className='product-gallery__thumbs'>
+                          <div className='product-gallery__thumb'>
+                            <div className='product-gallery__thumb-placeholder'>
+                              <img></img>
+                            </div>
+                          </div>
+                          <div className='product-gallery__thumb'>
+                            <div className='product-gallery__thumb-placeholder'>
+                              <img></img>
+                            </div>
+                          </div>
+                          <div className='product-gallery__thumb'>
+                            <div className='product-gallery__thumb-placeholder'>
+                              <img></img>
+                            </div>
+                          </div>
+                          <div className='product-gallery__thumb'>
+                            <div className='product-gallery__thumb-placeholder'>
+                              <img></img>
+                            </div>
+                          </div>
+                          <div className='product-gallery__thumb'>
+                            <div className='product-gallery__thumb-placeholder'>
+                              <img></img>
+                            </div>
+                          </div>
+                          <div className='product-gallery__thumb'>
+                            <div className='product-gallery__thumb-placeholder'>
+                              <img></img>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className='product-gallery__main-imgs-container'></div>
+                        <div>
+                          <div className='product-gallery__main-imgs'></div>
+                        </div>
+                    </div>
+                    <div className='col-xs-4 sidebar-container'></div>
             </div>
           </div>
         </section>

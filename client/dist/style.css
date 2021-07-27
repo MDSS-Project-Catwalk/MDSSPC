@@ -4,6 +4,7 @@ body {
   height: 100%;
   width: 100%;
   margin: 0;
+  color: black;
 }
 
 section {
@@ -65,6 +66,7 @@ header {
 .app-header {
   display: flex;
   height: 60px;
+  margin: 0 auto;
 }
 
 .app-header__far-left, .app-header__middle, .app-header__far-right {
@@ -76,10 +78,12 @@ ul > li {
   zoom:1;
   display:inline;
   padding-right:20px;
+  font-size: 12px;
 }
 
 .logo-text {
   font-family: 'Wallpoet', cursive;
+  font-size: 25px;
   margin-top: 15px;
 }
 
@@ -94,7 +98,9 @@ ul > li {
 /******************* BREAD CRUMBS SECTION ********************/
 
 .breadcrumbs {
-  margin: 0 40px 30px;
+  /* margin: 0 40px 30px; */
+  margin-top: 0;
+  margin-bottom: 30px;
   height: 50px;
   line-height: 50px;
   box-sizing: border-box;
@@ -113,6 +119,7 @@ ul > li {
   display: inline;
   list-style-type: none;
   margin-left: 0;
+  font-size: 13px;
 }
 
 .breadcrumbs > li:before {
@@ -129,4 +136,90 @@ ul > li {
 .breadcrumb.breadcrumb-disabled {
   pointer-events: none;
   color: #757575;
+}
+
+/******************* CONTENT BODY ********************/
+.row {
+  margin:0;
+}
+
+.contents-container {
+  margin-left: 15px;
+  margin-right: 20px;
+  /* background-color: red; */
+  /* height: 80vh; */
+  min-width: 1000px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+}
+
+.three-col-container [class*=col-]{
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.col-xs-12, .col-xs-8, .col-xs-4 {
+  width: 100%;
+  float: left;
+  position: relative;
+  min-height: 1px;
+}
+
+.col-xs-8 {
+  width: 66.66666667%;
+}
+
+.col-xs-4 {
+  width: 33.33333333%;
+}
+
+.product-gallery {
+  display: flex;
+  background-color:brown;
+  height: 80vh;
+}
+
+.sidebar-container {
+  position: sticky;
+  top: 80px;
+  background-color: burlywood;
+  height: 80vh;
+}
+
+.product-gallery__thumbs-container {
+  width: 9%;
+  margin-right: 8px;
+  min-width: 65px;
+}
+
+.product-gallery__thumbs {
+  /* width: 53.3077px; */
+  width: 70px;
+  box-sizing: border-box;
+  position: sticky;
+  top: 80px;
+}
+
+.product-gallery__thumb {
+  width: 53.3077px;
+  line-height: 0;
+  margin-bottom: 8px;
+  border: 1px solid #f7f7f8;
+}
+
+.product-gallery__thumb-placeholder {
+  height: 53.3077px;
+  background-color: #f3f3f3;
+}
+
+.product-gallery__main-img-container {
+  width: 91%;
+}
+
+.product-gallery__main-imgs {
+  margin-left: 8px;
+  position: relative;
 }
