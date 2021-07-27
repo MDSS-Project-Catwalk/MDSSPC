@@ -14,7 +14,20 @@ section {
 
 u {
   font-weight: 300;
+  cursor: pointer;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: 300;
+}
+
+img {
+  width: 40px;
+}
+
+/******************* BANNER ********************/
 
 .builder-banner-container{
   height: 45px;
@@ -32,4 +45,88 @@ u {
   width: 100%;
   top: 10px;
   left: 0;
+}
+
+/******************* SITE HEADER ********************/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
+.site-header-container {
+  z-index: 9;
+  position: sticky;
+  top: 0;
+  height: 60px;
+}
+
+.app-header {
+  display: flex;
+  height: 60px;
+}
+
+.app-header__far-left, .app-header__middle, .app-header__far-right {
+  display: flex;
+}
+
+ul > li {
+  display: inline-block;
+  zoom:1;
+  display:inline;
+  padding-right:20px;
+}
+
+.logo-text {
+  font-family: 'Wallpoet', cursive;
+  margin-top: 15px;
+}
+
+.menu-left {
+  margin-top: 20px;
+}
+
+.menu-right {
+  margin-top: 20px;
+}
+
+/******************* BREAD CRUMBS SECTION ********************/
+
+.breadcrumbs {
+  margin: 0 40px 30px;
+  height: 50px;
+  line-height: 50px;
+  box-sizing: border-box;
+  border-top: 1px solid #dfe0e1;
+  border-bottom: 1px solid #dfe0e1;
+  padding-left: 0;
+  font-weight: 300;
+}
+
+.breadcrumb {
+  cursor: pointer;
+  /* padding: 0; */
+}
+
+.breadcrumbs > li {
+  display: inline;
+  list-style-type: none;
+  margin-left: 0;
+}
+
+.breadcrumbs > li:before {
+  content: "/";
+  padding-right: 20px;
+  /* padding-left: 3px; */
+}
+
+.breadcrumbs > li:first-child:before {
+  content: "";
+  padding-right: 0;
+}
+
+.breadcrumb.breadcrumb-disabled {
+  pointer-events: none;
+  color: #757575;
 }
