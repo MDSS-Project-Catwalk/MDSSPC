@@ -1,0 +1,44 @@
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #8b8a8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  width: 500px;
+  background-color: #fff;
+}
+
+.modal-body {
+  padding: 10px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-title {
+  margin: 0;
+}
+
+.modal-header, .modal-footer {
+  padding: 10px;
+}
+
+/* table {
+  border-collapse: collapse;
+  border: 2px solid black;
+  letter-spacing: 1px;
+}
+
+th {
+  border-top: 1px solid black;
+  padding: 10px;
+  text-align: center;
+} */
