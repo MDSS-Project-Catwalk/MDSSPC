@@ -102,7 +102,16 @@ app.put('/qa/questions/:question_id/helpful', (req, res) => {
       res.status(404).send(err.message);
     });
 });
-// post questions and answers to be done
+
+app.post('/qa/questions/:question_id/answers', (req, res) => {
+  axios.post(`/qa/questions/${req.params.question_id}/answers`, req.body)
+    .then((result) => {
+      res.status(201).send(result);
+    })
+    .catch((err) => {
+      res.send(err.message);
+    });
+});
 
 app.listen(port, () => {
   console.log(`App listening at post: ${port}`);

@@ -1,4 +1,9 @@
 import axios from 'axios';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import AddAnswerModal from './AddAnswerModal';
+
+// helper functions
 
 const addQuestionToStorage = (questionID) => {
   const likedQuestionsStorage = window.localStorage.getItem('likedQuestions');
@@ -18,16 +23,16 @@ const addQuestionToStorage = (questionID) => {
 
 const isInStorage = (questionID) => {
   const likedQuestionsStorage = window.localStorage.getItem('likedQuestions');
-
   if (likedQuestionsStorage) {
     const parsedStorage = JSON.parse(likedQuestionsStorage);
     return parsedStorage.includes(questionID);
   }
-
   return false;
 };
 
-const markQuestionHelpful = (questionID, questionHelpfulnessState) => {
+// on click handlers
+
+export const markQuestionHelpful = (questionID, questionHelpfulnessState) => {
   if (!isInStorage(questionID)) {
     axios.put(`/qa/questions/${questionID}/helpful`)
       .then(() => {
@@ -37,4 +42,11 @@ const markQuestionHelpful = (questionID, questionHelpfulnessState) => {
   }
 };
 
-export default markQuestionHelpful;
+export const openAnswerModalHandler = (question) => {
+  ReactDOM.render(<AddAnswerModal question={question} />, document.getElementById('answer-modal'));
+  document.getElementById('add_answer_modal').style.display = 'block';
+};
+
+export const closeAnswerModalHandler = () => {
+  document.getElementById('add_answer_modal').style.display = 'none';
+};

@@ -65,3 +65,59 @@ font-size: small;
 .question {
   font-weight: 600;
 }
+
+.add_answer_modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* add_answer_modal Content/Box */
+.add_answer_modal_content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+  display: grid;
+  grid-template-columns: 50px auto 50px;
+  grid-template-rows: auto auto;
+}
+
+.modal_head {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.modal_body {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.add-answer-form {
+  display: grid;
+  grid-auto-columns: 300px;
+  row-gap: 10px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

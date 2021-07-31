@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AnswersListEntry from './AnswersListEntry';
-import markQuestionHelpful from './OnClickHandlers';
+import { markQuestionHelpful, openAnswerModalHandler } from './QOnClickHandlers';
+import AddAnswerModal from './AddAnswerModal';
 
 const QuestionsListEntry = (props) => {
   const { question } = props;
   const { question_body, question_id, answers, question_helpfulness} = question;
-
   const [allAnswers, setAllAnswers] = useState({ product_id: null, results: [] });
   const [allAnswersCount, setAllAnswersCount] = useState(Object.keys(answers).length);
   const [answersLoad, setAnswersLoad] = useState({ count: 2, button: 'more' });
@@ -48,15 +48,16 @@ const QuestionsListEntry = (props) => {
         </p>
         <div className="question_links">
           <p className="helpful">Helpful?</p>
-          <p className="yes_link">
-            <button type="submit" className="yes_btn" onClick={() => markQuestionHelpful(question_id, setQuestionHelpfullness)}>
-              Yes
-            </button>
-            (
-            {questionHelpfulness}
-            )
-          </p>
-          <p className="add_answer_link">| Add Answer</p>
+          <button type="submit" className="yes_link" onClick={() => markQuestionHelpful(question_id, setQuestionHelpfullness)}>
+            Yes
+          </button>
+          (
+          {questionHelpfulness}
+          )
+          <button type="submit" className="add_answer_link_btn" onClick={() => openAnswerModalHandler(question)}>
+            | Add Answer
+          </button>
+          <div id="answer-modal" />
         </div>
       </div>
       <div className="answer_list" id="answer_list">

@@ -10,7 +10,7 @@ const questionAnswers = (props) => {
   useEffect(() => {
     axios.get('qa/questions/', {
       params: {
-        product_id: 25168,
+        product_id: 25165,
         count: 4,
       },
     })
