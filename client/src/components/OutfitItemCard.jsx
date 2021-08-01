@@ -1,20 +1,12 @@
 import React, { useState } from 'react';
 import Comparing from './Comparing.jsx';
 
-function OutfitItemCard() {
+function OutfitItemCard(props) {
 
   return (
-    <div>
-      OUTFIT ITEM CARD:
-      <div>
-        Category
-        <button>X</button>
+    <div className="card-container">
+      <div className="card">
       </div>
-      <div>
-        <span>Product Name</span>
-        <span>Price</span>
-      </div>
-      <span>Star Rating</span>
     </div>
   )
 }

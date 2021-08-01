@@ -1,42 +1,45 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import ComparisonModal from './Comparing.jsx';
+import StarRating from './StarRating.jsx';
 
 function RelatedItemCard(props) {
   const [openModal, setOpenModal] = useState(false);
-
-  let itemsToShow;
-  let name;
-
-  if (props.relatedProducts.length !== 0) {
-    itemsToShow = props.relatedProducts[0];
-    name = itemsToShow.name;
-    console.log('name:', name);
-  }
-
-  console.log(itemsToShow);
-
-  // console.log('relatedProducts from RelatedItemCard:', props.relatedProducts);
-  // console.log('relatedProductsStyles from RelatedItemCard:', props.relatedProductsStyles);
-  // console.log('0:', props.relatedProducts[0]);
+  const currentImage = useRef();
 
   return (
-    <div>
-      <li>
-        <div>
-        <div>{name}</div>
-          <button
-            className="openModalBtn"
+    <div className="card-container">
+      <div className="card">
+        <div className="card-header">
+          <span>{props.product.category}</span>
+          <span>
+            <button
+            className="modal-button"
             onClick={() => {
               setOpenModal(true);
-            }}>*
+            }}>
+            {<span className="material-icons">star</span>}
           </button>
+        </span>
         </div>
-        <img alt="Product"></img>
-        <div>
+      <div className="img">
+        <img src={props.product.results[0].photos[0].url}
+             ref={currentImage}
+             className="card-image zoom"
+             alt="Picture of clothing.">
+        </img>
+      </div>
+        <div className="card-footer">
+        <span className="name-price">
+          <span>{props.product.name}</span>
+            <span> </span>
+          <span>${props.product.default_price}</span>
+        </span>
+          <div>
+            <StarRating rating={props.product.ratingsAverage}/>
+          </div>
         </div>
-        <span>Star Rating</span>
         {openModal && <ComparisonModal closeModal={setOpenModal} />}
-      </li>
+      </div>
     </div>
   )
 }
