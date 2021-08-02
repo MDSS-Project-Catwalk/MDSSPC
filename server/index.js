@@ -49,7 +49,7 @@ app.get('/reviews', (req, res) => {
       res.send(result.data);
     })
     .catch((err) => {
-      throw err;
+      res.send(err);
     });
 });
 
@@ -59,7 +59,7 @@ app.get('/reviews/meta', (req, res) => {
       res.send(result.data);
     })
     .catch((err) => {
-      throw err;
+      res.send(err);
     });
 });
 
