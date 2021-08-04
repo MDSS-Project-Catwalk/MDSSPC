@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './RelatedItems/App.jsx';
+import RelatedItemsComponent from './RelatedItems/RelatedItemsComponent.jsx';
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<RelatedItemsComponent />, document.getElementById('app'));
