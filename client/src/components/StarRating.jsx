@@ -5,10 +5,7 @@ function StarRating(props) {
   const innerStar = useRef();
 
   useEffect(() => {
-    console.log(props.rating);
     innerStar.current.style.width = props.rating;
-    console.log(outerStar);
-    console.log(innerStar);
   })
 
   return (

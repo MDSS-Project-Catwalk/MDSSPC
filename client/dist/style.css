@@ -31,6 +31,7 @@
   height: 350px;
   padding-right: 15px;
   box-sizing: border-box;
+  font-family: 'Wallpoet', cursive;
 }
 
 .carousel-container .card-container .card {
@@ -41,10 +42,12 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  font-family: 'Wallpoet', cursive;
 }
 
 .card > * {
   flex: 1;
+  font-family: 'Wallpoet', cursive;
 }
 
 .card .img {
@@ -63,6 +66,7 @@
   padding: 3px;
   box-sizing: border-box;
   font-size: 15px;
+  font-family: 'Wallpoet', cursive;
 }
 
 .card .card-footer {
@@ -74,6 +78,7 @@
   padding: 10px;
   box-sizing: border-box;
   font-size: 10px;
+  font-family: 'Wallpoet', cursive;
 }
 
 .img {
@@ -85,6 +90,7 @@
   width: 55%;
   height: auto;
   background: #aaa;
+  font-family: 'Wallpoet', cursive;
 }
 
 .nav button {
@@ -149,25 +155,30 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Wallpoet', cursive;
 }
 
 .modal-content {
   width: 500px;
   background-color: #fff;
+  font-family: 'Wallpoet', cursive;
 }
 
 .modal-body {
   padding: 10px;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
+  font-family: 'Wallpoet', cursive;
 }
 
 .modal-title {
   margin: 0;
+  font-family: 'Wallpoet', cursive;
 }
 
 .modal-header, .modal-footer {
   padding: 10px;
+  font-family: 'Wallpoet', cursive;
 }
 
 .modal-button {
@@ -175,6 +186,7 @@
   border: 0;
   color: #eee;
   cursor: pointer;
+  font-family: 'Wallpoet', cursive;
 }
 
 /* Image Related */

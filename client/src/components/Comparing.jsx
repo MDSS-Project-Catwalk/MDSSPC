@@ -28,7 +28,7 @@ function ComparisonModal({closeModal}) {
                 <th></th>
                 <th>Characteristics</th>
                 <th></th>
-            </tr>
+              </tr>
             </thead>
           </table>
           </div>

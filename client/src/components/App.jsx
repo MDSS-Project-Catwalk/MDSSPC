@@ -3,7 +3,7 @@ import OutfitList from './OutfitList.jsx';
 import RelatedItemsList from './RelatedItemsList.jsx';
 
 function App() {
-  const [relatedProducts, setRelatedProducts] = useState([])
+  const [relatedProducts, setRelatedProducts] = useState([]);
 
   function compareProducts(a, b) {
 
@@ -17,10 +17,12 @@ function App() {
   }
 
   let relatedProductsArr = [];
+  let randomID = Math.floor(Math.random() * 10000);
 
   useEffect(() => {
+
     //Retrieve information based on one product:
-    fetch('http://localhost:3000/products/25167/related')
+    fetch(`http://localhost:3000/products/25167/related`)
       .then(response => response.json())
       .then(data => { return data })
       //Retrieve related product information of product:

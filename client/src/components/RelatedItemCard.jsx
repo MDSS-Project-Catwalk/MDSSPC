@@ -25,12 +25,13 @@ function RelatedItemCard(props) {
         <img src={props.product.results[0].photos[0].url}
              ref={currentImage}
              className="card-image zoom"
-             alt="Picture of clothing.">
+             alt="Photo unavailable."
+          >
         </img>
       </div>
         <div className="card-footer">
         <span className="name-price">
-          <span>{props.product.name}</span>
+          <span>{props.product.name} --- </span>
             <span> </span>
           <span>${props.product.default_price}</span>
         </span>
@@ -45,3 +46,6 @@ function RelatedItemCard(props) {
 }
 
 export default RelatedItemCard;
+
+
+//props.product.results[0].photos[0].url
