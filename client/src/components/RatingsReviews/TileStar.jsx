@@ -1,5 +1,5 @@
 import React from 'react';
-import { IoIosStar, IoIosStarOutline } from 'react-icons/io';
+import { IoIosStar } from 'react-icons/io';
 
 const TileStar = (props) => {
 
