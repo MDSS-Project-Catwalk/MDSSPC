@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App.jsx';
+import App from './RelatedItems/App.jsx';
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 
