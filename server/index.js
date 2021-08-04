@@ -103,6 +103,26 @@ app.put('/qa/questions/:question_id/helpful', (req, res) => {
     });
 });
 
+app.put('/qa/answers/:answer_id/helpful', (req, res) => {
+  axios.put(`/qa/answers/${req.params.answer_id}/helpful`)
+    .then(() => {
+      res.status(200).send();
+    })
+    .catch((err) => {
+      res.status(401).send(err.message);
+    });
+});
+
+app.put('/qa/answers/:answer_id/report', (req, res) => {
+  axios.put(`/qa/answers/${req.params.answer_id}/report`)
+    .then(() => {
+      res.status(200).send();
+    })
+    .catch((err) => {
+      res.status(401).send(err.message);
+    });
+});
+
 app.post('/qa/questions/:question_id/answers', (req, res) => {
   axios.post(`/qa/questions/${req.params.question_id}/answers`, req.body)
     .then((result) => {
@@ -110,6 +130,16 @@ app.post('/qa/questions/:question_id/answers', (req, res) => {
     })
     .catch((err) => {
       res.send(err.message);
+    });
+});
+
+app.post('/qa/questions', (req, res) => {
+  axios.post('/qa/questions', req.body)
+    .then((result) => {
+      res.status(201).send(result.data);
+    })
+    .catch((err) => {
+      res.status(404).send(err.message);
     });
 });
 

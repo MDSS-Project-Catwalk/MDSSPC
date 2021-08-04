@@ -3,12 +3,17 @@ import QuestionsListEntry from './QuestionsListEntry';
 import { DataContext } from './QA';
 
 const QuestionsList = () => {
-  const { product_id, results } = useContext(DataContext);
+  const { data, count } = useContext(DataContext);
+  const { product_id, results } = data;
+
   return (
     <>
-      {results.map((question) => (
-        <QuestionsListEntry question={question} key={question.question_id} />
-      ))}
+      {results.map((question, index) => {
+        if (index < count) {
+          return <QuestionsListEntry question={question} key={question.question_id} />;
+        }
+        return null;
+      })}
     </>
   );
 };

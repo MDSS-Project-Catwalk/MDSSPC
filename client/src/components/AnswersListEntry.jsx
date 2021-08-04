@@ -1,23 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Moment from 'react-moment';
 import PhotoEntry from './PhotoEntry';
+import { markAnswerHelpful, markAnswerReported } from './AOnClickHandlers';
 
 const AnswersListEntry = (props) => {
   const { answer } = props;
+  const {helpfulness, answer_id, body, answerer_name, date, photos} = answer;
+  const [answerHelpfulness, setAnswerHelpfulness] = useState(helpfulness);
+  const [isAnswerReported, setIsAnswerReported] = useState(false);
+
   return (
     <div className="answer_body">
       A:
-      { answer.body }
+      { body }
       <div className="answer_footer">
-        By {answer.answerer_name} , {answer.date}
+        By {answerer_name}, <Moment format="MMM D, YYYY">{date}</Moment>
         <div className="answers_links">
           <p className="helpful_answers">| Helpful?</p>
-          <p className="yes_link_answers">Yes ({answer.helpfulness})</p>
-          <p className="report_link">| Report</p>
+          <button type="button" className="yes_link_answers" onClick={() => (markAnswerHelpful(answer_id, setAnswerHelpfulness))}>
+            Yes
+            (
+            {answerHelpfulness}
+            )
+          </button>
+          {isAnswerReported
+            ? (
+              <p type="button" className="report_link">
+                Reported
+              </p>
+            )
+            : (
+              <button type="button" className="report_link" onClick={() => markAnswerReported(answer_id, setIsAnswerReported)}>
+                Report
+              </button>
+            )}
         </div>
-        {answer.photos.length > 0 &&
-          answer.photos.map((photo) => (
-            <PhotoEntry photo={photo} key={photo.id} />
-          ))}
+        {photos.length > 0
+        && photos.map((photo) => (
+          <PhotoEntry photo={photo} key={photo.id} />
+        ))}
       </div>
     </div>
   );

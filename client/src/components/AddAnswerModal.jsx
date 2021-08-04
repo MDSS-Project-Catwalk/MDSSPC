@@ -91,7 +91,7 @@ const AddAnswerModal = ({question}) => {
           </button>
         </div>
         <div className="modal_body">
-          <form className="add-answer-form" onSubmit={(e) => onAnswerModalSubmitHandler(e, question.question_id)}>
+          <form className="add-answer-form" onSubmit={onAnswerModalSubmitHandler}>
             <label>Your Answer</label>
             <input type="text" id="answer" placeholder="Your Answer" required />
             <label>Your Nickname</label>

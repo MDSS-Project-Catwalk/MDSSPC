@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AddAnswerModal from './AddAnswerModal';
+import AddQuestionModal from './AddQuestionModal';
 
 // helper functions
 
@@ -49,4 +50,13 @@ export const openAnswerModalHandler = (question) => {
 
 export const closeAnswerModalHandler = () => {
   document.getElementById('add_answer_modal').style.display = 'none';
+};
+
+export const openQuestionModalHandler = (productID) => {
+  ReactDOM.render(<AddQuestionModal productID={productID} />, document.getElementById('question-modal'));
+  document.getElementById('add_question_modal').style.display = 'block';
+};
+
+export const closeQuestionModalHandler = () => {
+  document.getElementById('add_question_modal').style.display = 'none';
 };

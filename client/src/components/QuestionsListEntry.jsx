@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AnswersListEntry from './AnswersListEntry';
 import { markQuestionHelpful, openAnswerModalHandler } from './QOnClickHandlers';
-import AddAnswerModal from './AddAnswerModal';
 
 const QuestionsListEntry = (props) => {
   const { question } = props;
@@ -11,6 +10,7 @@ const QuestionsListEntry = (props) => {
   const [allAnswersCount, setAllAnswersCount] = useState(Object.keys(answers).length);
   const [answersLoad, setAnswersLoad] = useState({ count: 2, button: 'more' });
   const [questionHelpfulness, setQuestionHelpfullness] = useState(question_helpfulness);
+  let answersLoadButton;
 
   const loadAnswers = () => {
     setAnswersLoad(() => ({
@@ -39,6 +39,14 @@ const QuestionsListEntry = (props) => {
       });
   }, [answersLoad.count]);
 
+  if (allAnswersCount > answersLoad.count) {
+    if (answersLoad.button === 'more') {
+      answersLoadButton = <button type="submit" onClick={loadAnswers}>See More Answers</button>;
+    } else {
+      answersLoadButton = <button type="submit" onClick={collapseAnswers}>Collapse Answers</button>;
+    }
+  }
+
   return (
     <div className="question_list">
       <div className="question_body">
@@ -65,9 +73,7 @@ const QuestionsListEntry = (props) => {
           <AnswersListEntry answer={answer} key={answer.answer_id} />
         ))}
       </div>
-      { answersLoad.button === 'more'
-        ? <button type="submit" onClick={loadAnswers}>See More Answers</button>
-        : <button type="submit" onClick={collapseAnswers}>Collapse Answers</button> }
+      { answersLoadButton }
     </div>
   );
 };

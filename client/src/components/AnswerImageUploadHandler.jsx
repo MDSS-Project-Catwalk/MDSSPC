@@ -19,8 +19,8 @@ const AnswerImageUploadHandler = ({files, extract, imageUrlData}) => {
       && url.length === eachProgress.length) {
         setIsUploading(false);
         extract(error, url);
-      }0
-     }, [taskCompleted, url]);
+      }
+    }, [taskCompleted, url]);
 
     return (
       <div className="thumbnails">
