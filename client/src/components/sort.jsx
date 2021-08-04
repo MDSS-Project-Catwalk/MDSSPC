@@ -69,7 +69,7 @@ const Sort = () => {
       }}
       >
         <label>
-          Sort &nbsp;
+          Sort &nbsp; 
           <select onChange={(event) => { setSort(event.target.value); }}>
             <option value="newest">Newest</option>
             <option value="helpful">Helpful</option>

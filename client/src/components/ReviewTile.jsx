@@ -15,7 +15,7 @@ const ReviewTile = (props) => {
       <div style={{textAlign:"right", color:"#b3b3b3"}}>{props.value.reviewer_name} {props.value.date.slice(0,10)}</div>
       <Photos photos={props.value.photos}/>
       <div style={{fontWeight: "bold"}}>{props.value.summary}</div>
-      <div >{props.value.body}</div>
+      <p >{props.value.body}</p>
       <Recommend recommend={props.value.recommend}/>
       <Response response={props.value.response}/> &nbsp; Helpful? &nbsp; &nbsp; 
       <button className="astext" onClick={() => {

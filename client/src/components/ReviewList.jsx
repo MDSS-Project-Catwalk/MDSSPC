@@ -5,7 +5,7 @@ import ReviewListContext from './context.jsx';
 function ReviewList() {
 
   const reviewList = useContext(ReviewListContext);
-  const [ counter, setCounter ] = useState(2);
+  const [counter, setCounter] = useState(2);
 
   return (
     <div>
@@ -13,11 +13,9 @@ function ReviewList() {
         <ReviewTile key={index}
           value={tile} />
       )}
-    { reviewList.list.length >= 2 ?  
-    <button onClick={() => { setCounter(counter + 2) }}>Show More</button>
-     : 
-      null
-    } 
+      {reviewList.list.length >= 2 && counter < reviewList.list.length ?
+        <p><button onClick={() => { setCounter(counter + 2) }}>Show More</button></p>
+        : null}
     </div>
   );
 };
