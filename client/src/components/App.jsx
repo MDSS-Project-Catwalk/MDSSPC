@@ -17,15 +17,21 @@ const App = () => {
     justify-content: center;
   `;
   const Boxtwo = styled.div`
-  flex:1;
   width: 200px;
   `;
   const Boxone = styled.div`
-  flex:4; 
+  
   align-items: center;
-  width: 600px;
+  width: 650px;
   `;
-
+  const Cont = styled.div`
+  display: flex;
+  justify-content: center;
+  `;
+  const Header = styled.h1`
+  flex: 1;
+  width: 400px;
+  `;
 useEffect(() => {
   axios.get('/reviews', {
     params: {
@@ -59,13 +65,13 @@ useEffect(() => {
 
 return (
   <ReviewListContext.Provider value={{ list, setList, meta, setMeta, showModal, setModal }}>
-      <h1>Reviews</h1>
-      <Sort />
+    <Cont><Header>Ratings &amp; Reviews</Header></Cont>
     <Container>
-    {Object.keys(meta).length ? <Boxtwo><Breakdown /></Boxtwo> : null}
+    {Object.keys(meta).length ? <Boxtwo><Sort /> Ratings and Reviews <Breakdown /></Boxtwo> : null}
     <Boxone><ReviewList /></Boxone>
+    {showModal ? <Boxone><AddReview /></Boxone> : null}
     </Container>
-    {showModal ? <AddReview /> : null}
+    
     {!showModal ? <button onClick={() => { setModal(!showModal) }}> Write Review </button> : null}
   </ReviewListContext.Provider>
 );
