@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import useStorage from './hooks/useStorage';
+import useStorage from '../hooks/useStorage';
 
 const AnswerImageUploadHandler = ({files, extract, imageUrlData}) => {
   if (files !== undefined) {
