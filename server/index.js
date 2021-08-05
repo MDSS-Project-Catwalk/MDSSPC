@@ -51,7 +51,7 @@ app.get('/reviews', (req, res) => {
       res.send(result.data);
     })
     .catch((err) => {
-      res.status(404).send(err.message);
+      res.send(err);
     });
 });
 
@@ -61,7 +61,7 @@ app.get('/reviews/meta', (req, res) => {
       res.send(result.data);
     })
     .catch((err) => {
-      res.status(404).send(err.message);
+      res.send(err);
     });
 });
 
