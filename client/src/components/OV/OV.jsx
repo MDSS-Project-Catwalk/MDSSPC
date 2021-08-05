@@ -7,10 +7,9 @@ const Overview = () => {
   const [selectedStyle, setSelectedStyle] = useState({});
   const { results } = productDataStyle;
 
-  console.log(productDataStyle.results);
-
   useEffect(() => {
-    axios.get('/products/25167')
+    let randomNumber = Math.floor(Math.random() * 10000);
+    axios.get(`/products/25167`)
       .then((response) => {
         setProductData(() => (response.data));
       });
@@ -131,7 +130,7 @@ const Overview = () => {
                           {results.map((style, index) => {
                             const btnImg = style.photos[0].thumbnail_url;
                             return (
-                              <button className="styles-btn" type="button" style={{background: `url(${btnImg}) no-repeat`, backgroundSize: '100%'}}/>
+                              <button className="styles-btn" type="button" key={index} style={{background: `url(${btnImg}) no-repeat`, backgroundSize: '100%'}}/>
                             );
                           })}
                         </div>

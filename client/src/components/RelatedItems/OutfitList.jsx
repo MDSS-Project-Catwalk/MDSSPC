@@ -1,18 +1,24 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import OutfitItemCard from './OutfitItemCard.jsx';
 import OutfitAddButton from './OutfitAddButton.jsx';
 
 function OutfitList(props) {
   const [addedOutfits, setAddedOufits] = useState([]);
-  console.log('addedOutfits:', addedOutfits.length);
+  const [placeholderCards, setPlaceholderCards] = useState([3]);
+  const [outfitCardCount, setOutfitCardCount] = useState(1);
 
   let trackEl = useRef();
   let prevBtn = useRef();
   let nextBtn = useRef();
 
+  useEffect(() => {
+    nextBtn.current.style="display: none";
+    prevBtn.current.styke="display: none";
+  })
+
    //Allow slide scrolling:
-   let currentLocation = 0;
-  //  let maximumScroll = -(props.relatedProducts.length / 2) * 323;
+   let currentLocation = -161.5;
+   let maximumScroll = -(placeholderCards.length / 2) * 323;
 
    const nextScrollHandler = () => {
      if (currentLocation > maximumScroll) {
@@ -29,16 +35,16 @@ function OutfitList(props) {
      }
    }
    const prevScrollHandler = () => {
-     if (currentLocation !== 0) {
+     if (currentLocation !== -161.5) {
        trackEl.current.style.transform = `translateX(${currentLocation + 323}px)`;
        currentLocation += 323;
      }
-     if (currentLocation === 0) {
+     if (currentLocation === -161.5) {
        prevBtn.current.style="display: none;"
      } else {
        prevBtn.current.style="display: block;"
      }
-     if (currentLocation !== 0) {
+     if (currentLocation === -161.5) {
        nextBtn.current.style="display: block;"
      }
    }

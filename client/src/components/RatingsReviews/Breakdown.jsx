@@ -54,18 +54,18 @@ const Breakdown = () => {
             starSpacing="1px"
             starRatedColor="grey"
             starEmptyColor="#d2d2d2" /> </Boxone>
-          : null} 
-        
+          : null}
+
       </Container>
       <div>
-        {rate.map((bar) => {
+        {rate.map((bar, index) => {
           if (rating[bar]) {
           return (
-            <div >{bar} stars <meter style={meterStyle} max={totalRatings} min="0.0" value={rating[bar]}></meter></div>
+            <div >{bar} stars <meter key={index} style={meterStyle} max={totalRatings} min="0.0" value={rating[bar]}></meter></div>
           )
           } else {
             return (
-              <div >{bar} stars <meter style={meterStyle} max={totalRatings} min="0.0" value="0"></meter></div>
+              <div >{bar} stars <meter key={index} style={meterStyle} max={totalRatings} min="0.0" value="0"></meter></div>
             )
           }
         })}
