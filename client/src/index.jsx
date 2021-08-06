@@ -11,4 +11,3 @@ ReactDOM.render(<OV />, document.getElementById('ov'));
 ReactDOM.render(<RelatedItemsComponent />, document.getElementById('ri'));
 ReactDOM.render(<QA />, document.getElementById('qa'));
 ReactDOM.render(<Reviews />, document.getElementById('re'));
-

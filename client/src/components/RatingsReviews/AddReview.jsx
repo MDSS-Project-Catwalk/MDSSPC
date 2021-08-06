@@ -20,11 +20,12 @@ const AddReview = () => {
         right: 0,
         bottom: 0,
         backgroundColor: 'rgba(0, 0, 0, .7)',
-        zIndex: 1000
+        zIndex: 100
       }
       const x = {
           top: '100%',
           left: '0%',
+          backgroundColor: "#f1f1f1"
       }
     return ReactDom.createPortal(
         <div style={background}>
