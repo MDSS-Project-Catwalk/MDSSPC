@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import QA from './components/QA/QA';
 import OV from './components/OV/OV';
-import RelatedItemsComponent from './RelatedItems/RelatedItemsComponent.jsx';
+import RelatedItemsComponent from './components/RelatedItems/RelatedItemsComponent';
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 import Reviews from './components/RatingsReviews/ReviewApp.jsx';

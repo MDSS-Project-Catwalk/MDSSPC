@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import '../../dist/style.css';
+import '../../../dist/style.css';
 
-function ComparisonModal({closeModal}) {
+function ComparisonModal(props) {
+
+  let relatedItemChars = props.relatedItemCharacteristics;
   return (
     <div
     className="modal"
     onClick={() => {
-      closeModal(false);
+      props.closeModal(false);
     }}>
       <div
       className="modal-content"
@@ -25,10 +27,23 @@ function ComparisonModal({closeModal}) {
                 <th>Compared Product Name</th>
               </tr>
               <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+              <tr>
                 <th></th>
-                <th>Characteristics</th>
+                <th>Characteristics:</th>
                 <th></th>
               </tr>
+              {relatedItemChars.map((item, index) => {
+                console.log(item.feature, item.value);
+                return <tr>
+                  <th></th>
+                  <th>{item.feature}</th>
+                  <th>{item.value}</th>
+                </tr>
+              })}
             </thead>
           </table>
           </div>
@@ -37,7 +52,7 @@ function ComparisonModal({closeModal}) {
         <button
           className="modal-btn"
           onClick={() => {
-            closeModal(false);
+            props.closeModal(false);
           }}>Close
         </button>
       </div>

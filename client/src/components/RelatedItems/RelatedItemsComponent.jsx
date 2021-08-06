@@ -4,6 +4,7 @@ import RelatedItemsList from './RelatedItemsList.jsx';
 
 function App() {
   const [relatedProducts, setRelatedProducts] = useState([]);
+  const [addOutfit, setAddOutfit] = useState(0);
 
   function compareProducts(a, b) {
 
@@ -14,6 +15,12 @@ function App() {
       comparison = -1;
     }
     return comparison;
+  }
+
+  function addingOutfit () {
+    console.log('Outfit item added.');
+    setAddOutfit((addOutfit + 1));
+    console.log('addOutfit count:', addOutfit)
   }
 
   let relatedProductsArr = [];
@@ -65,7 +72,7 @@ function App() {
       <RelatedItemsList
         relatedProducts={relatedProducts}
       />
-      <OutfitList />
+      <OutfitList addOutfit={addingOutfit}/>
     </div>
   )
 }

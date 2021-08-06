@@ -39,7 +39,7 @@ function RelatedItemCard(props) {
             <StarRating rating={props.product.ratingsAverage}/>
           </div>
         </div>
-        {openModal && <ComparisonModal closeModal={setOpenModal} />}
+        {openModal && <ComparisonModal  relatedItemCharacteristics={props.product.features} closeModal={setOpenModal}  />}
       </div>
     </div>
   )
