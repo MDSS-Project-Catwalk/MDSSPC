@@ -90,13 +90,13 @@ const Breakdown = () => {
             starSpacing="1px"
             starRatedColor="#4c4c4b"
             starEmptyColor="#d2d2d2" /> </Boxone>
-          : null} 
+          : null}
       </Container>
       <ContainerTwo>
         <Boxtwo>{avg}</Boxtwo>&nbsp;|&nbsp;
         <BoxThree>{totalRatings}  reviews</BoxThree>
       </ContainerTwo>
-      
+
       <Ratings>
       <Meter>
         {rate.map((bar, i) => {
@@ -112,7 +112,7 @@ const Breakdown = () => {
         })}
       </Meter>
       </Ratings>
-      
+
     </div>
   );
 };
