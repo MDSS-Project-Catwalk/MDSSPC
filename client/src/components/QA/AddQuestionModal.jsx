@@ -23,8 +23,8 @@ const AddQuestionModal = ({ productID }) => {
       });
   };
   return (
-    <div id="add_question_modal" className="add_question_modal">
-      <div className="add_question_modal_content">
+    <div id="add_question_modal" className="add_answer_modal">
+      <div className="add_answer_modal_content">
         <div className="modal_head">
           <span className="modal_title">Ask Your Question</span>
           <span className="modal_subtitle">About the [Product Name Here]</span>
@@ -35,14 +35,14 @@ const AddQuestionModal = ({ productID }) => {
         <div className="modal_body">
           <form className="add-question-form" onSubmit={onQuestionModalSubmitHandler}>
             <label>Your Question</label>
-            <input type="text" id="question" placeholder="Your Question" required />
+            <textarea type="text" maxLength="1000" rows="5" className="answer-box" id="question" placeholder="Your Question" required />
             <label>What is your nickname?</label>
-            <input type="text" id="nickname" placeholder="Example: jackson11!" required />
+            <input type="text" className="input-box" id="nickname" placeholder="Example: jackson11!" required />
             <label>Your Email</label>
-            <input type="email" id="email" placeholder="jack@email.com" required />
+            <input type="email" className="input-box" id="email" placeholder="jack@email.com" required />
             <span>For authentication reasons, you will not be emailed.</span>
             {submitError}
-            <button type="submit">
+            <button type="submit" className="submit-btn btn">
               Submit
             </button>
           </form>

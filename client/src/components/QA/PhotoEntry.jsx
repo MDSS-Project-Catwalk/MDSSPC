@@ -3,8 +3,8 @@ import React from 'react';
 const PhotoEntry = (props) => {
   const {photo} = props;
   return (
-    <div className="photos">
-      <img src={photo.url} width="75" height="100" />
+    <div>
+      <img className="answer-img" src={photo.url} />
     </div>
   );
 };
