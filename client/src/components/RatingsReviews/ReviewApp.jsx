@@ -7,7 +7,7 @@ import AddReview from './AddReview.jsx';
 import Breakdown from './Breakdown.jsx';
 import styled from 'styled-components';
 
-const App = () => {
+const Reviews = () => {
   const [list, setList] = useState([]);
   const [meta, setMeta] = useState({});
   const [showModal, setModal] = useState(false);
@@ -124,4 +124,4 @@ const App = () => {
     </ReviewListContext.Provider>
   );
 };
-export default App;
+export default Reviews;
