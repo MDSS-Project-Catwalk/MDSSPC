@@ -1,0 +1,97 @@
+[33m6872b88[m[33m ([m[1;36mHEAD -> [m[1;32mQA[m[33m, [m[1;31morigin/QA[m[33m)[m HEAD@{0}: checkout: moving from dev to QA
+[33m83313d5[m[33m ([m[1;31morigin/dev[m[33m, [m[1;32mdev[m[33m)[m HEAD@{1}: reset: moving to HEAD
+[33m83313d5[m[33m ([m[1;31morigin/dev[m[33m, [m[1;32mdev[m[33m)[m HEAD@{2}: commit (merge): merge Reviews to dev
+[33m486d743[m HEAD@{3}: checkout: moving from dev to dev
+[33m486d743[m HEAD@{4}: reset: moving to HEAD
+[33m486d743[m HEAD@{5}: checkout: moving from Reviews to dev
+[33m5f8f525[m[33m ([m[1;31morigin/Reviews[m[33m, [m[1;32mReviews[m[33m)[m HEAD@{6}: pull origin Reviews: Fast-forward
+[33m00b56eb[m HEAD@{7}: checkout: moving from dev to Reviews
+[33m486d743[m HEAD@{8}: reset: moving to HEAD
+[33m486d743[m HEAD@{9}: checkout: moving from Reviews to dev
+[33m00b56eb[m HEAD@{10}: checkout: moving from related to Reviews
+[33m23044b7[m[33m ([m[1;32mrelated[m[33m, [m[1;32mmain[m[33m)[m HEAD@{11}: checkout: moving from main to related
+[33m23044b7[m[33m ([m[1;32mrelated[m[33m, [m[1;32mmain[m[33m)[m HEAD@{12}: pull origin dev: Fast-forward
+[33m4c1505a[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{13}: checkout: moving from RelatedItemsCopy to main
+[33m23044b7[m[33m ([m[1;32mrelated[m[33m, [m[1;32mmain[m[33m)[m HEAD@{14}: checkout: moving from dev to RelatedItemsCopy
+[33m23044b7[m[33m ([m[1;32mrelated[m[33m, [m[1;32mmain[m[33m)[m HEAD@{15}: checkout: moving from RelatedItemsCopy to dev
+[33m23044b7[m[33m ([m[1;32mrelated[m[33m, [m[1;32mmain[m[33m)[m HEAD@{16}: merge dev: Fast-forward
+[33ma678122[m[33m ([m[1;31morigin/RelatedItemsCopy[m[33m)[m HEAD@{17}: checkout: moving from dev to RelatedItemsCopy
+[33m23044b7[m[33m ([m[1;32mrelated[m[33m, [m[1;32mmain[m[33m)[m HEAD@{18}: reset: moving to HEAD
+[33m23044b7[m[33m ([m[1;32mrelated[m[33m, [m[1;32mmain[m[33m)[m HEAD@{19}: commit (merge): reviews merge
+[33mc6bd6a5[m HEAD@{20}: checkout: moving from Reviews to dev
+[33mfb0f4f8[m HEAD@{21}: commit (merge): merge reviews
+[33mc6bd6a5[m HEAD@{22}: checkout: moving from dev to Reviews
+[33mc6bd6a5[m HEAD@{23}: checkout: moving from dev to dev
+[33mc6bd6a5[m HEAD@{24}: checkout: moving from Reviews to dev
+[33mc6bd6a5[m HEAD@{25}: merge dev: Fast-forward
+[33m3778428[m HEAD@{26}: checkout: moving from dev to Reviews
+[33mc6bd6a5[m HEAD@{27}: pull origin dev: Fast-forward
+[33m1d33a74[m HEAD@{28}: checkout: moving from RelatedItems to dev
+[33md539af4[m[33m ([m[1;31morigin/RelatedItems[m[33m)[m HEAD@{29}: commit (merge): merging
+[33ma678122[m[33m ([m[1;31morigin/RelatedItemsCopy[m[33m)[m HEAD@{30}: pull: Fast-forward
+[33m6804872[m HEAD@{31}: checkout: moving from dev to RelatedItems
+[33m1d33a74[m HEAD@{32}: commit: CSS FOR QA
+[33ma9d1439[m HEAD@{33}: commit: fix to dev?
+[33m6872b88[m[33m ([m[1;36mHEAD -> [m[1;32mQA[m[33m, [m[1;31morigin/QA[m[33m)[m HEAD@{34}: checkout: moving from QA to dev
+[33m6872b88[m[33m ([m[1;36mHEAD -> [m[1;32mQA[m[33m, [m[1;31morigin/QA[m[33m)[m HEAD@{35}: pull origin dev: Fast-forward
+[33m5c5c79a[m HEAD@{36}: checkout: moving from dev to QA
+[33m6872b88[m[33m ([m[1;36mHEAD -> [m[1;32mQA[m[33m, [m[1;31morigin/QA[m[33m)[m HEAD@{37}: commit: related move in components
+[33m5c5c79a[m HEAD@{38}: checkout: moving from QA to dev
+[33m5c5c79a[m HEAD@{39}: pull origin dev: Fast-forward
+[33m3778428[m HEAD@{40}: reset: moving to HEAD
+[33m3778428[m HEAD@{41}: checkout: moving from dev to QA
+[33m5c5c79a[m HEAD@{42}: commit (merge): completed merge of all components
+[33m0df0d0b[m HEAD@{43}: checkout: moving from dev to dev
+[33m0df0d0b[m HEAD@{44}: pull origin dev: Fast-forward
+[33m3778428[m HEAD@{45}: checkout: moving from Reviews to dev
+[33m3778428[m HEAD@{46}: checkout: moving from dev to Reviews
+[33m3778428[m HEAD@{47}: checkout: moving from Reviews to dev
+[33m3778428[m HEAD@{48}: checkout: moving from dev to Reviews
+[33m3778428[m HEAD@{49}: checkout: moving from Reviews to dev
+[33m3778428[m HEAD@{50}: checkout: moving from dev to Reviews
+[33m3778428[m HEAD@{51}: checkout: moving from dev to dev
+[33m3778428[m HEAD@{52}: checkout: moving from RelatedItems to dev
+[33m6804872[m HEAD@{53}: commit (merge): fixed merge issues with related products and dev
+[33m3778428[m HEAD@{54}: checkout: moving from dev to RelatedItems
+[33m3778428[m HEAD@{55}: checkout: moving from dev to dev
+[33m3778428[m HEAD@{56}: checkout: moving from QA to dev
+[33m3778428[m HEAD@{57}: checkout: moving from dev to QA
+[33m3778428[m HEAD@{58}: checkout: moving from QA to dev
+[33m3778428[m HEAD@{59}: commit: code ready for merge
+[33mb66cbe2[m HEAD@{60}: commit: components in different Files
+[33m135ee46[m HEAD@{61}: commit: QA AND OV MERGE
+[33m72e3ac0[m HEAD@{62}: commit: MVP Complete for QA Component
+[33m06d5921[m HEAD@{63}: commit: Added 'See More Questions Button'
+[33m69c4587[m HEAD@{64}: commit: modal to add answer completed
+[33m3dcbdb1[m HEAD@{65}: commit: rendered data, implemented See More Answers and Collapse Answers, Implemented marking question as helpfuland its functionalities
+[33m4c1505a[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{66}: checkout: moving from main to QA
+[33m4c1505a[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{67}: pull origin main: Fast-forward
+[33m4e048b4[m HEAD@{68}: checkout: moving from server-setup to main
+[33m0b6c68b[m[33m ([m[1;31morigin/server-setup[m[33m)[m HEAD@{69}: commit: added query entry for get products
+[33meaab9d8[m HEAD@{70}: checkout: moving from main to server-setup
+[33m4e048b4[m HEAD@{71}: pull origin main: Fast-forward
+[33m222463d[m HEAD@{72}: checkout: moving from server-setup to main
+[33meaab9d8[m HEAD@{73}: commit: Added API calls and auth token integration
+[33m222463d[m HEAD@{74}: checkout: moving from main to server-setup
+[33m222463d[m HEAD@{75}: checkout: moving from main to main
+[33m222463d[m HEAD@{76}: pull origin main: Fast-forward
+[33m1d2c61a[m[33m ([m[1;31morigin/init[m[33m)[m HEAD@{77}: checkout: moving from init to main
+[33m1d2c61a[m[33m ([m[1;31morigin/init[m[33m)[m HEAD@{78}: checkout: moving from main to init
+[33m1d2c61a[m[33m ([m[1;31morigin/init[m[33m)[m HEAD@{79}: pull origin main: Merge made by the 'recursive' strategy.
+[33m7f53ecb[m HEAD@{80}: commit: added test suites and redux
+[33m8f20c11[m HEAD@{81}: checkout: moving from intialization to main
+[33m730a155[m[33m ([m[1;31morigin/intialization[m[33m)[m HEAD@{82}: reset: moving to HEAD
+[33m730a155[m[33m ([m[1;31morigin/intialization[m[33m)[m HEAD@{83}: commit: test
+[33m8f20c11[m HEAD@{84}: checkout: moving from main to intialization
+[33m8f20c11[m HEAD@{85}: pull origin main: Fast-forward
+[33m4eababb[m HEAD@{86}: checkout: moving from initialization to main
+[33m7f37152[m[33m ([m[1;31morigin/initialization[m[33m)[m HEAD@{87}: commit: added eslint
+[33m1b4796b[m HEAD@{88}: checkout: moving from main to initialization
+[33m4eababb[m HEAD@{89}: checkout: moving from main to main
+[33m4eababb[m HEAD@{90}: pull origin main: Fast-forward
+[33md12c9a2[m HEAD@{91}: checkout: moving from initialization to main
+[33m1b4796b[m HEAD@{92}: commit: Webpack initialization and dependencies
+[33md12c9a2[m HEAD@{93}: checkout: moving from main to initialization
+[33md12c9a2[m HEAD@{94}: checkout: moving from initialization to main
+[33md12c9a2[m HEAD@{95}: checkout: moving from main to initialization
+[33md12c9a2[m HEAD@{96}: clone: from https://github.com/MDSS-Project-Catwalk/MDSSPC.git
