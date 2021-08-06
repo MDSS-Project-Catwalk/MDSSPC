@@ -108,12 +108,12 @@ const Reviews = () => {
          <Breakdown />
         </Boxtwo> : null}
         <ContainerTwo>
-        Sort &nbsp;
-      {Object.keys(meta).length ? <BoxThree>
+        
+      {Object.keys(meta).length ? <BoxThree>Sort &nbsp;
           <Sort />
         </BoxThree> : null} 
         <BoxFour>
-        {!showModal ? <Butn><button onClick={() => { setModal(!showModal) }}> Write Review </button></Butn> : null}
+        {!showModal ? <Butn><button className="rr-WriteReview btn" onClick={() => { setModal(!showModal) }}> Write Review </button></Butn> : null}
         </BoxFour>
         </ContainerTwo>
       <hr style={{ width: "1450px", color: "#dfe0e1" }}></hr>

@@ -69,13 +69,12 @@ const Sort = () => {
       }}
       >
         <label>
-
-          <select onChange={(event) => { setSort(event.target.value); }}>
+          <select className="dropdown" onChange={(event) => { setSort(event.target.value); }}>
             <option value="newest">Newest</option>
             <option value="helpful">Helpful</option>
             <option value="relevant">Relevant</option>
           </select>
-        </label>
+        </label> &nbsp;&nbsp;
         <input type="submit" value="Submit" className="rr-submit btn" />
       </form>
     </div>

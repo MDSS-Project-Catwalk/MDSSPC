@@ -29,16 +29,16 @@ function App() {
   useEffect(() => {
 
     //Retrieve information based on one product:
-    fetch(`http://localhost:3000/products/25167/related`)
+    fetch(`/products/25167/related`)
       .then(response => response.json())
       .then(data => { return data })
       //Retrieve related product information of product:
       .then((data) => {
         data.forEach((id) => {
           Promise.all([
-            fetch(`http://localhost:3000/products/${id}`),
-            fetch(`http://localhost:3000/products/${id}/styles`),
-            fetch(`http://localhost:3000/reviews/meta?product_id=${id}`)
+            fetch(`/products/${id}`),
+            fetch(`/products/${id}/styles`),
+            fetch(`/reviews/meta?product_id=${id}`)
           ]).then((responses) => {
             return Promise.all(responses.map((response) => {
               return response.json();
