@@ -6,7 +6,7 @@ import React from 'react';
     if(photosExist) {
       return (
         props.photos.map((photo) => {
-          return <img src={photo.url} width="100" height="100" style={{outlineStyle:"solid", outlineWidth: "1px"}}/>
+          return <img src={photo.url} style={{width: "100px", height: "100px"}}/>
         }))
     } 
   }  

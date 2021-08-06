@@ -24,7 +24,6 @@ const Reviews = () => {
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
-  color: 
   `;
   const Boxone = styled.div`
   flex: 0 0 auto;
@@ -49,11 +48,12 @@ const Reviews = () => {
   `;
   const Line = styled.div`
   flex: 0 0 auto;
-  border-left: solid #b3b3b3;
+  border-left: solid #dfe0e1;
   width: 0px;
   top: 6px;
   right: 0px;
   position: relative;
+  
   `;
   const BoxThree = styled.div`
   flex: none;
@@ -66,6 +66,7 @@ const Reviews = () => {
   width: 700px;
   left: 600px;
   `;
+
   useEffect(() => {
     axios.get('/reviews', {
       params: {
@@ -107,7 +108,7 @@ const Reviews = () => {
          <Breakdown />
         </Boxtwo> : null}
         <ContainerTwo>
-        <div>Sort</div>
+        Sort &nbsp;
       {Object.keys(meta).length ? <BoxThree>
           <Sort />
         </BoxThree> : null} 
@@ -117,7 +118,6 @@ const Reviews = () => {
         </ContainerTwo>
       <hr style={{ width: "1450px", color: "#dfe0e1" }}></hr>
       {showModal ? <AddReview /> : null}
-        <Line style={{ paddingTop: "8px" }} />
       <Container>
         <Boxone><ReviewList /></Boxone>
       </Container>
