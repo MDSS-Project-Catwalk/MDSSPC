@@ -8,13 +8,12 @@ const Overview = () => {
   const { results } = productDataStyle;
 
   useEffect(() => {
-    let randomNumber = Math.floor(Math.random() * 10000);
-    axios.get(`/products/25167`)
+    axios.get('/products/25167')
       .then((response) => {
         setProductData(() => (response.data));
       });
 
-    axios.get('/products/25167/styles')
+    axios.get(`/products/25167/styles`)
       .then((response) => {
         setSelectedStyle(() => (response.data.results[0]));
         setProductDataStyle(() => (response.data));

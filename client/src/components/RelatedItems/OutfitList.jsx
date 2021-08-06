@@ -4,8 +4,7 @@ import OutfitAddButton from './OutfitAddButton.jsx';
 
 function OutfitList(props) {
   const [addedOutfits, setAddedOufits] = useState([]);
-  const [placeholderCards, setPlaceholderCards] = useState([3]);
-  const [outfitCardCount, setOutfitCardCount] = useState(1);
+  const [placeholderCards, setPlaceholderCards] = useState(3);
 
   let trackEl = useRef();
   let prevBtn = useRef();
@@ -53,7 +52,8 @@ function OutfitList(props) {
     <div className="carousel-container">
       <div className="carousel-inner">
         <div className="track" ref={trackEl}>
-          <OutfitAddButton />
+          <OutfitAddButton addOutfit={props.addOutfit}/>
+          <OutfitItemCard />
         </div>
       </div>
         <div className="nav">

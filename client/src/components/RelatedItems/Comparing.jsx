@@ -4,8 +4,6 @@ import '../../../dist/style.css';
 function ComparisonModal(props) {
 
   let relatedItemChars = props.relatedItemCharacteristics;
-  console.log('comparison modal item features:', relatedItemChars);
-  // console.log('comparison modal item values:', relatedItemCharacteristics.values);
   return (
     <div
     className="modal"

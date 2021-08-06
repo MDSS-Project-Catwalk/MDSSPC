@@ -27,7 +27,6 @@ function RelatedItemsList(props) {
 
   const nextScrollHandler = () => {
     count++;
-    console.log(count);
     if (currentLocation > maximumScroll) {
       trackEl.current.style.transform = `translateX(${currentLocation - 323}px)`;
       currentLocation -= 323;
@@ -43,7 +42,6 @@ function RelatedItemsList(props) {
   }
   const prevScrollHandler = () => {
     count--;
-    console.log(count);
     if (currentLocation !== 0) {
       trackEl.current.style.transform = `translateX(${currentLocation + 323}px)`;
       currentLocation += 323;
