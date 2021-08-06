@@ -1,7 +1,7 @@
+const compression = require('compression');
 const express = require('express');
 const axios = require('axios');
 const config = require('../config');
-
 const app = express();
 const port = 3000;
 
@@ -10,6 +10,7 @@ axios.defaults.headers.common.Authorization = config.TOKEN;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/', express.static('./client/dist'));
+app.use(compression());
 
 // products
 
