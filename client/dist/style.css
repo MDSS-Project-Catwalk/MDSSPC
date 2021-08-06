@@ -701,6 +701,7 @@ label {
   height: auto;
   background: #aaa;
   font-family: 'Wallpoet', cursive;
+  object-fit: cover;
 }
 
 .nav button {
@@ -757,6 +758,7 @@ label {
 
 .modal {
   position: absolute;
+  height: 100%;
   top: 0;
   left: 0;
   right: 0;
@@ -766,6 +768,7 @@ label {
   align-items: center;
   justify-content: center;
   font-family: 'Wallpoet', cursive;
+  content: none;
 }
 
 .modal-content {
@@ -776,6 +779,7 @@ label {
 
 .modal-body {
   padding: 10px;
+  height: auto;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
   font-family: 'Wallpoet', cursive;
