@@ -8,7 +8,7 @@ function ReviewList() {
   const [counter, setCounter] = useState(2);
 
   return (
-    <div>
+    <div style={{paddingBottom: "5px"}} >
       {reviewList.list.slice(0, counter).map((tile, index) =>
         <ReviewTile key={index}
           value={tile} />
