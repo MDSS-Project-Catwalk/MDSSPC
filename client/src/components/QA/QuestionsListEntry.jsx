@@ -16,6 +16,7 @@ const QuestionsListEntry = (props) => {
     setAnswersLoad(() => ({
       count: allAnswersCount,
       button: 'less',
+      class: 'answer_list_expand',
     }));
   };
 
@@ -23,6 +24,7 @@ const QuestionsListEntry = (props) => {
     setAnswersLoad(() => ({
       count: 2,
       button: 'more',
+      class: 'answer_list',
     }));
   };
 
@@ -39,19 +41,19 @@ const QuestionsListEntry = (props) => {
       });
   }, [answersLoad.count]);
 
-  if (allAnswersCount > answersLoad.count) {
-    if (answersLoad.button === 'more') {
-      answersLoadButton = <button type="submit" onClick={loadAnswers}>See More Answers</button>;
-    } else {
-      answersLoadButton = <button type="submit" onClick={collapseAnswers}>Collapse Answers</button>;
-    }
+  // if (allAnswersCount > answersLoad.count) {
+  if (answersLoad.button === 'more') {
+    answersLoadButton = <button type="submit" className="more-answers-btn" onClick={loadAnswers}>See More Answers</button>;
+  } else {
+    answersLoadButton = <button type="submit" className="more-answers-btn" onClick={collapseAnswers}>Collapse Answers</button>;
   }
+  // }
 
   return (
     <div className="question_list">
       <div className="question_body">
         <p className="question">
-          Q:
+          Q:&nbsp;
           {question_body}
         </p>
         <div className="question_links">
@@ -61,19 +63,20 @@ const QuestionsListEntry = (props) => {
           </button>
           (
           {questionHelpfulness}
-          )
+          ) &nbsp;|
           <button type="submit" className="add_answer_link_btn" onClick={() => openAnswerModalHandler(question)}>
-            | Add Answer
+            Add Answer
           </button>
           <div id="answer-modal" />
         </div>
       </div>
-      <div className="answer_list" id="answer_list">
+      <div className={answersLoad.class} id="answer_list">
         {allAnswers.results.map((answer) => (
           <AnswersListEntry answer={answer} key={answer.answer_id} />
         ))}
       </div>
       { answersLoadButton }
+      <hr />
     </div>
   );
 };

@@ -7,7 +7,7 @@ function OutfitAddButton(props) {
   return (
     <div className="card-container">
       <div className="card">
-        <button onClick={props.addOutfit} className="add-outfit-button" ref={addOutfitButton}>
+        <button className="add-outfit-button" ref={addOutfitButton}>
         <span className="material-icons">add_circle</span>
         <span>Add to Outfit</span>
         </button>

@@ -3,14 +3,17 @@ import OutfitItemCard from './OutfitItemCard.jsx';
 import OutfitAddButton from './OutfitAddButton.jsx';
 
 function OutfitList(props) {
+
   const [addedOutfits, setAddedOufits] = useState([]);
   const [placeholderCards, setPlaceholderCards] = useState(3);
+  const [outfitOptions, setOutfitOptions] = useState([]);
 
   let trackEl = useRef();
   let prevBtn = useRef();
   let nextBtn = useRef();
 
   useEffect(() => {
+    // setOutfitOptions(props);
     nextBtn.current.style="display: none";
     prevBtn.current.styke="display: none";
   })
@@ -52,8 +55,12 @@ function OutfitList(props) {
     <div className="carousel-container">
       <div className="carousel-inner">
         <div className="track" ref={trackEl}>
-          <OutfitAddButton addOutfit={props.addOutfit}/>
-          <OutfitItemCard />
+          <OutfitAddButton/>
+          {
+            outfitOptions.map((option, index) => {
+              return <OutfitItemCard option={option} key={index}/>
+            })
+          }
         </div>
       </div>
         <div className="nav">

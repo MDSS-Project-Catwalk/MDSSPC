@@ -11,23 +11,34 @@ const AnswersListEntry = (props) => {
 
   return (
     <div className="answer_body">
-      A:
-      { body }
+      <div className="answer-text">
+        A: &nbsp;
+        { body }
+      </div>
+      <div className="thumbnails">
+        {photos.length > 0
+        && photos.map((photo) => (
+          <PhotoEntry photo={photo} key={photo.id} />
+        ))}
+        </div>
       <div className="answer_footer">
-        By {answerer_name}, <Moment format="MMM D, YYYY">{date}</Moment>
+        By &nbsp;{answerer_name}, &nbsp; <Moment format="MMM D, YYYY">{date}</Moment>
         <div className="answers_links">
           <p className="helpful_answers">| Helpful?</p>
-          <button type="button" className="yes_link_answers" onClick={() => (markAnswerHelpful(answer_id, setAnswerHelpfulness))}>
+          &nbsp; &nbsp;
+          <button type="button" className="yes_link" onClick={() => (markAnswerHelpful(answer_id, setAnswerHelpfulness))}>
             Yes
-            (
-            {answerHelpfulness}
-            )
           </button>
+          &nbsp;
+          (
+          {answerHelpfulness}
+          )
+          |
           {isAnswerReported
             ? (
-              <p type="button" className="report_link">
+              <button type="button" className="report_link">
                 Reported
-              </p>
+              </button>
             )
             : (
               <button type="button" className="report_link" onClick={() => markAnswerReported(answer_id, setIsAnswerReported)}>
@@ -35,10 +46,6 @@ const AnswersListEntry = (props) => {
               </button>
             )}
         </div>
-        {photos.length > 0
-        && photos.map((photo) => (
-          <PhotoEntry photo={photo} key={photo.id} />
-        ))}
       </div>
     </div>
   );

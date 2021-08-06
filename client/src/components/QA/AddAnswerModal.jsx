@@ -13,6 +13,8 @@ const AddAnswerModal = ({question}) => {
   let UploadButton;
   let SubmitButton;
 
+  console.log(question)
+
   const onImageAddHandler = (e) => {
     setSelectedFiles([e.target.files]);
   };
@@ -43,11 +45,11 @@ const AddAnswerModal = ({question}) => {
   };
 
   if (uploading) {
-    UploadButton = <button type="button" disabled onClick={onUploadClickHandler}>Upload</button>;
-    SubmitButton = <button type="submit" disabled> Submit </button>;
+    UploadButton = <button type="button" className="upload-btn btn disabled" disabled onClick={onUploadClickHandler}>Upload</button>;
+    SubmitButton = <button type="submit" className="submit-btn btn disabled" disabled> Submit </button>;
   } else {
-    UploadButton = <button type="button" onClick={onUploadClickHandler}>Upload</button>;
-    SubmitButton = <button type="submit"> Submit </button>;
+    UploadButton = <button type="button" className="upload-btn btn" onClick={onUploadClickHandler}>Upload</button>;
+    SubmitButton = <button type="submit" className="submit-btn btn"> Submit </button>;
   }
 
   const onAnswerModalSubmitHandler = (formData) => {
@@ -85,28 +87,29 @@ const AddAnswerModal = ({question}) => {
       <div className="add_answer_modal_content">
         <div className="modal_head">
           <span className="modal_title">Submit Your Answer</span>
-          <span className="modal_subtitle"> {question.question_body} - 1234123</span>
+          <span className="modal_subtitle"> [Product Name]: {question.question_body}</span>
           <button className="close" onClick={closeAnswerModalHandler} type="button" tabIndex={0}>
             &times;
           </button>
         </div>
+        <hr />
         <div className="modal_body">
           <form className="add-answer-form" onSubmit={onAnswerModalSubmitHandler}>
             <label>Your Answer</label>
-            <input type="text" id="answer" placeholder="Your Answer" required />
+            <textarea type="text" rows="5" maxLength="1000" className="answer-box" id="answer" placeholder="Your Answer" required />
             <label>Your Nickname</label>
-            <input type="text" id="nickname" placeholder="Example: jack543" required />
+            <input type="text" className="input-box" id="nickname" placeholder="Example: jack543" required />
             <label>Your Email</label>
-            <input type="email" id="email" placeholder="jack@email.com" required />
+            <input type="email" className="input-box" id="email" placeholder="jack@email.com" required />
             <span>For authentication reasons, you will not be emailed.</span>
             {imageUrlData.length < 5 && (
-            <input
-              type="file"
-              multiple
-              id="uploads"
-              accept="image/png, image/jpeg"
-              onChange={onImageAddHandler}
-            />
+              <input
+                type="file"
+                multiple
+                id="uploads"
+                accept="image/png, image/jpeg"
+                onChange={onImageAddHandler}
+              />
             )}
             <span>
               { uploadError }
