@@ -29,7 +29,7 @@ const ReviewTile = (props) => {
         setYes(Yes + 1);
         setVote(true);
         }}} > Yes &nbsp;  </button> {`(${Yes})`} &nbsp;&nbsp;|  
-      <button style={{color: "#4c4c4b"}}className="astext">&nbsp;&nbsp;&nbsp; Report </button>
+      <button style={{color: "#4c4c4b"}}className="astext">&nbsp;&nbsp; Report </button>
       </div>
     </div>
     </div>

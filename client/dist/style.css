@@ -375,9 +375,24 @@ align-items: center;
   border-radius: 10px;
   cursor: pointer;
 }
-
+.rr-WriteReview.btn {
+  padding: 10px;
+  font-size: 17px;
+}
+.rr-ShowMore.btn {
+  padding: 10px;
+  font-size: 17px;
+}
 .rr-submit.btn {
   padding: 5px;
+  font-size: 17px;
+}
+
+.dropdown {
+  width: 120px;
+  height: 40px;
+  background-color: #f0f0f0;
+  font-size: 18px;
 }
 
 .disabled {
