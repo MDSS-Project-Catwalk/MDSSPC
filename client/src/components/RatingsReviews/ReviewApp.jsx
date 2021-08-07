@@ -39,7 +39,10 @@ import productContext from '../../productContext.jsx';
   position: relative;
   justify-content: center;
 `;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 52228cd7c740bf194a03b93fdd0d1022496f48ff
   const BoxThree = styled.div`
   flex: none;
   position: relative;
@@ -104,7 +107,11 @@ const Reviews = (props) => {
 
       {Object.keys(meta).length ? <BoxThree>Sort &nbsp;
           <Sort props={{sort, setSort}} />
+<<<<<<< HEAD
         </BoxThree> : null} 
+=======
+        </BoxThree> : null}
+>>>>>>> 52228cd7c740bf194a03b93fdd0d1022496f48ff
         <BoxFour>
         {!showModal ? <button className="rr-WriteReview btn" onClick={() => { setModal(!showModal) }}> Write Review </button> : null}
         </BoxFour>
