@@ -380,7 +380,6 @@ align-items: center;
   cursor: pointer;
 }
 .rr-WriteReview.btn {
-  padding: 10px;
   font-size: 17px;
 }
 .rr-ShowMore.btn {
@@ -395,7 +394,7 @@ align-items: center;
 .dropdown {
   width: 120px;
   height: 40px;
-  background-color: #f0f0f0;
+  background-color: white;
   font-size: 18px;
 }
 

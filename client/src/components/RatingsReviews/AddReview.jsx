@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import ReviewListContext from './context.jsx';
 import ReactDom from 'react-dom';
+import AddReviewContent from './AddReviewContent.jsx';
 
 const AddReview = () => {
     const modal = useContext(ReviewListContext);
+
     const modal_style = {
         position: 'fixed',
         top: '50%',
@@ -12,8 +14,8 @@ const AddReview = () => {
         backgroundColor: '#FFF',
         padding: '0px',
         zIndex: 1000
-      }
-      const background = {
+    }
+    const background = {
         position: 'fixed',
         top: 0,
         left: 0,
@@ -21,18 +23,22 @@ const AddReview = () => {
         bottom: 0,
         backgroundColor: 'rgba(0, 0, 0, .7)',
         zIndex: 100
-      }
-      const x = {
-          top: '100%',
-          left: '0%',
-          backgroundColor: "#f1f1f1"
-      }
+    }
+    const x = {
+        top: '100%',
+        left: '0%',
+        backgroundColor: "#f1f1f1"
+    }
+    
     return ReactDom.createPortal(
         <div style={background}>
             <div style={modal_style}>
-                <button style={x} onClick={()=> {modal.setModal(!modal.showModal)}}>X</button>
-                <h1 style={{paddingRight: '20px', paddingLeft: '20px'}}>Write Your Review</h1>
-                <p style={{paddingRight: '20px', paddingLeft: '20px'}}>about the product </p>
+                <button style={x} onClick={() => { modal.setModal(!modal.showModal) }}>X</button>
+                    <div style={{padding: "60px"}}>
+                        <h1 >Write Your Review</h1>
+                        <p >about the product </p>
+                        <AddReviewContent />
+                    </div>
             </div>
         </div>, document.getElementById('portal')
     )
