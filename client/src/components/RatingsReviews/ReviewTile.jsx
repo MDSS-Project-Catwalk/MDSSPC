@@ -12,7 +12,7 @@ const ReviewTile = (props) => {
 
   return (
     <div style={{backgroundColor: "#f2g2g2", padding:"10px", paddingLeft:"10px"}}  >
-      { list.list[0] !== props.value ? <hr style={{color: "#dfe0e1", width: "1400px"}}/> : null}
+      { list.list[0] !== props.value ? <hr style={{color: "#dfe0e1", width: "1280px"}}/> : null}
       <TileStar rating={props.value.rating}/>
       <div style={{textAlign:"right", color:"#808284"}}>{props.value.reviewer_name} {props.value.date.slice(0,10)}</div>
       <div style={{paddingBottom: "5px"}}><Photos photos={props.value.photos}/></div>
@@ -22,7 +22,7 @@ const ReviewTile = (props) => {
       <div style={{color: "#4c4c4b"}}>
       <Response response={props.value.response} style={{color: "#4c4c4b"}}/>
       {props.value.response ? <div style={{paddingTop: "10px"}}></div> : null}
-      <div style={{backgroundColor: "#f1f1f1", width: "235px", padding: "5px"}}>
+      <div style={{backgroundColor: "#f1f1f1", width: "220px", padding: "5px"}}>
        &nbsp; Helpful? &nbsp; &nbsp; 
       <button style={{ color: "#4c4c4b"}} className="astext" onClick={() => {
         if( voted === false ){

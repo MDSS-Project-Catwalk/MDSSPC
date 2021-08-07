@@ -7,10 +7,11 @@ import AddReview from './AddReview.jsx';
 import Breakdown from './Breakdown.jsx';
 import styled from 'styled-components';
 
-const Reviews = () => {
+const Reviews = (props) => {
   const [list, setList] = useState([]);
   const [meta, setMeta] = useState({});
   const [showModal, setModal] = useState(false);
+  const [sort, setSort] = useState(null);
 
   const Container = styled.div`
   display: flex;
@@ -28,7 +29,7 @@ const Reviews = () => {
   const Boxone = styled.div`
   flex: 0 0 auto;
   align-items: center;
-  width: 1400px;
+  width: 1280px;
   justify-content: center;
   `;
   const Header = styled.div`
@@ -43,34 +44,23 @@ const Reviews = () => {
   position: relative;
   justify-content: center;
 `;
-  const Butn = styled.div`
-  left: 300px;
-  `;
-  const Line = styled.div`
-  flex: 0 0 auto;
-  border-left: solid #dfe0e1;
-  width: 0px;
-  top: 6px;
-  right: 0px;
-  position: relative;
-  
-  `;
+
   const BoxThree = styled.div`
   flex: none;
-  width: 700px;
   position: relative;
+  justify-content: start;
+  right: 500px;
   `;
   const BoxFour = styled.div`
   flex: none;
   position: relative;
-  width: 700px;
-  left: 600px;
+  left: 500px;
   `;
 
   useEffect(() => {
     axios.get('/reviews', {
       params: {
-        product_id: 25192,
+        product_id: 25167,
         sort: 'newest'
       }
     })
@@ -78,7 +68,7 @@ const Reviews = () => {
         setList(data.data.results);
       })
       .catch((error) => {
-        console.log('error', error);
+        alert('error', error);
       })
   }, []
   );
@@ -86,21 +76,22 @@ const Reviews = () => {
   useEffect(() => {
     axios.get('/reviews/meta', {
       params: {
-        product_id: 25192,
+        product_id: 25167,
       },
     })
       .then((data) => {
         setMeta(data.data);
-        console.log('hihi', meta)
+        console.log(meta)
       })
       .catch((err) => {
-        console.log(err);
+        alert(err);
       });
   }, []
   )
 
   return (
     <ReviewListContext.Provider value={{ list, setList, meta, setMeta, showModal, setModal }}>
+        <div style={{padding: "25px"}}/>
         <Header>
           <p style={{color: "#4c4c4b"}}>Ratings &amp; Reviews</p>
         </Header>
@@ -110,13 +101,13 @@ const Reviews = () => {
         <ContainerTwo>
         
       {Object.keys(meta).length ? <BoxThree>Sort &nbsp;
-          <Sort />
+          <Sort props={{sort, setSort}} />
         </BoxThree> : null} 
         <BoxFour>
-        {!showModal ? <Butn><button className="rr-WriteReview btn" onClick={() => { setModal(!showModal) }}> Write Review </button></Butn> : null}
+        {!showModal ? <button className="rr-WriteReview btn" onClick={() => { setModal(!showModal) }}> Write Review </button> : null}
         </BoxFour>
         </ContainerTwo>
-      <hr style={{ width: "1450px", color: "#dfe0e1" }}></hr>
+      <hr style={{ width: "1280px", color: "#dfe0e1" }}></hr>
       {showModal ? <AddReview /> : null}
       <Container>
         <Boxone><ReviewList /></Boxone>

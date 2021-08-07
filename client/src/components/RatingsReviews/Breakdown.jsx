@@ -75,7 +75,6 @@ const Breakdown = () => {
       }
     }
     const number = sum / length;
-    console.log(number);
     setAvg(Math.round(number * 10) / 10);
     setTotal(length);
   }, []);
