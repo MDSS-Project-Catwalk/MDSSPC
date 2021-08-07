@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import ReviewList from './ReviewList.jsx';
 import ReviewListContext from './context.jsx';
 import Sort from './sort.jsx';
@@ -53,7 +53,7 @@ const Reviews = () => {
   top: 6px;
   right: 0px;
   position: relative;
-  
+
   `;
   const BoxThree = styled.div`
   flex: none;
@@ -108,10 +108,10 @@ const Reviews = () => {
          <Breakdown />
         </Boxtwo> : null}
         <ContainerTwo>
-        
+
       {Object.keys(meta).length ? <BoxThree>Sort &nbsp;
           <Sort />
-        </BoxThree> : null} 
+        </BoxThree> : null}
         <BoxFour>
         {!showModal ? <Butn><button className="rr-WriteReview btn" onClick={() => { setModal(!showModal) }}> Write Review </button></Butn> : null}
         </BoxFour>

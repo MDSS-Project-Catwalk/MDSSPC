@@ -1,10 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import OutfitList from './OutfitList.jsx';
 import RelatedItemsList from './RelatedItemsList.jsx';
+import ProductContext from '../../productContext.jsx';
 
 function App() {
   const [relatedProducts, setRelatedProducts] = useState([]);
   const [addOutfit, setAddOutfit] = useState(0);
+
+  //ACCESS TO RANDOM ID PROVIDED BY index.jsx:
+  const globalContext = useContext(ProductContext);
+  // console.log(globalContext, ' from RelatedItemsComponent');
 
   function compareProducts(a, b) {
 
@@ -17,19 +22,11 @@ function App() {
     return comparison;
   }
 
-  function addingOutfit () {
-    console.log('Outfit item added.');
-    setAddOutfit((addOutfit + 1));
-    console.log('addOutfit count:', addOutfit)
-  }
-
   let relatedProductsArr = [];
-  let randomID = Math.floor(Math.random() * 10000);
 
   useEffect(() => {
-
     //Retrieve information based on one product:
-    fetch(`/products/25167/related`)
+    fetch(`/products/${globalContext.productId}/related`)
       .then(response => response.json())
       .then(data => { return data })
       //Retrieve related product information of product:
@@ -59,7 +56,7 @@ function App() {
             ratingsAverage = `${ratingsAverage.toFixed()}%`;
 
             relatedProductsArr.push({...data[0], ... data[1], ratingsAverage});
-            relatedProductsArr.push({...data[0], ... data[1], ratingsAverage});
+            // relatedProductsArr.push({...data[0], ... data[1], ratingsAverage});
             relatedProductsArr.sort(compareProducts);
           }).then(() => {
             setRelatedProducts([...relatedProductsArr]);
@@ -72,7 +69,9 @@ function App() {
       <RelatedItemsList
         relatedProducts={relatedProducts}
       />
-      <OutfitList addOutfit={addingOutfit}/>
+      <OutfitList
+        possibleOutfitOptions={relatedProducts}
+      />
     </div>
   )
 }
