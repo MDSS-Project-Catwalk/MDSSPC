@@ -5,8 +5,8 @@ import React from 'react';
     const photosExist = props.photos != [];
     if(photosExist) {
       return (
-        props.photos.map((photo) => {
-          return <img src={photo.url} style={{width: "100px", height: "100px"}}/>
+        props.photos.map((photo, i) => {
+          return <img key={i} src={photo.url} style={{width: "100px", height: "100px"}}/>
         }))
     } 
   }  

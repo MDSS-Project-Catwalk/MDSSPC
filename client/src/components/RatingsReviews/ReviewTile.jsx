@@ -18,11 +18,11 @@ const ReviewTile = (props) => {
       <div style={{paddingBottom: "5px"}}><Photos photos={props.value.photos}/></div>
       <div style={{fontWeight: "bold", color: "#4c4c4b", paddingBottom: "10px"}}>{props.value.summary}</div>
       <p style={{color:"#808284", paddingBottom: "10px"}}>{props.value.body}</p>
-      <p ><Recommend recommend={props.value.recommend}/></p>
+      <Recommend recommend={props.value.recommend}/>
       <div style={{color: "#4c4c4b"}}>
       <Response response={props.value.response} style={{color: "#4c4c4b"}}/>
       {props.value.response ? <div style={{paddingTop: "10px"}}></div> : null}
-      <div style={{backgroundColor: "#f1f1f1", width: "220px", padding: "5px"}}>
+      <div style={{backgroundColor: "#f1f1f1", width: "230px", padding: "5px"}}>
        &nbsp; Helpful? &nbsp; &nbsp; 
       <button style={{ color: "#4c4c4b"}} className="astext" onClick={() => {
         if( voted === false ){
