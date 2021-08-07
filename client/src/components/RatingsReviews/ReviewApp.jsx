@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import ReviewList from './ReviewList.jsx';
 import ReviewListContext from './context.jsx';
 import Sort from './sort.jsx';
@@ -44,7 +44,22 @@ const Reviews = (props) => {
   position: relative;
   justify-content: center;
 `;
+<<<<<<< HEAD
 
+=======
+  const Butn = styled.div`
+  left: 300px;
+  `;
+  const Line = styled.div`
+  flex: 0 0 auto;
+  border-left: solid #dfe0e1;
+  width: 0px;
+  top: 6px;
+  right: 0px;
+  position: relative;
+
+  `;
+>>>>>>> devtest
   const BoxThree = styled.div`
   flex: none;
   position: relative;
@@ -99,10 +114,15 @@ const Reviews = (props) => {
          <Breakdown />
         </Boxtwo> : null}
         <ContainerTwo>
-        
+
       {Object.keys(meta).length ? <BoxThree>Sort &nbsp;
+<<<<<<< HEAD
           <Sort props={{sort, setSort}} />
         </BoxThree> : null} 
+=======
+          <Sort />
+        </BoxThree> : null}
+>>>>>>> devtest
         <BoxFour>
         {!showModal ? <button className="rr-WriteReview btn" onClick={() => { setModal(!showModal) }}> Write Review </button> : null}
         </BoxFour>
