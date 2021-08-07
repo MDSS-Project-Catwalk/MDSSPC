@@ -1,12 +1,13 @@
-import ProductContext from './productContext.jsx';
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
+
+import ProductContext from './productContext';
 import QA from './components/QA/QA';
 import OV from './components/OV/OV';
 import RelatedItemsComponent from './components/RelatedItems/RelatedItemsComponent';
 import "core-js/stable";
 import "regenerator-runtime/runtime";
-import Reviews from './components/RatingsReviews/ReviewApp.jsx';
+import Reviews from './components/RatingsReviews/ReviewApp';
 
   function Global() {
     const randomID = Math.floor(Math.random() * (26178 - 25167) + 25167);

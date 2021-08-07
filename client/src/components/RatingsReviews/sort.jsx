@@ -1,24 +1,25 @@
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import ReviewListContext from './context.jsx';
+import productContext from '../../productContext.jsx';
 
 const Sort = (props) => {
   // const dropdownRef = useRef(null);
-  const reviewList = useContext(ReviewListContext);
-
+  const {productId} = useContext(productContext);
+  const {setList} = useContext(ReviewListContext);
   // upon clicking sort, it should open up the list
   // then each item has a click event where if you click, it'll render a new list based on helpful, newest, or relvant
   // set state using
   const filter = (currentValue) => {
     axios.get('/reviews', {
       params: {
-        product_id: 25167,
+        product_id: productId,
         sort: currentValue,
       }, 
     })
       .then((data) => {
         props.props.setSort(currentValue);
-        reviewList.setList(data.data.results);
+        setList(data.data.results);
       })
       .catch((error) => {
         alert('error', error);
