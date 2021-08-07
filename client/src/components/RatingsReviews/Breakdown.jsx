@@ -3,13 +3,6 @@ import StarRatings from 'react-star-ratings';
 import styled from 'styled-components';
 import ReviewListContext from './context.jsx';
 
-const Breakdown = () => {
-  const metaContext = useContext(ReviewListContext);
-  const [avg, setAvg] = useState(null);
-  const [totalRatings, setTotal] = useState(null);
-  const ratez = metaContext.meta.ratings;
-  const rate = [5, 4, 3, 2, 1];
-
   const meterStyle = {
     width: "150px",
     height: "12px",
@@ -61,6 +54,12 @@ const Breakdown = () => {
   left: 35px;
   `;
 
+const Breakdown = () => {
+  const metaContext = useContext(ReviewListContext);
+  const [avg, setAvg] = useState(null);
+  const [totalRatings, setTotal] = useState(null);
+  const ratez = metaContext.meta.ratings;
+  const rate = [5, 4, 3, 2, 1];
 
   useEffect(() => {
     let sum = 0;
@@ -78,7 +77,6 @@ const Breakdown = () => {
     setAvg(Math.round(number * 10) / 10);
     setTotal(length);
   }, []);
-
 
   return (
     <div style={{ fontFamily: "Arial"}}>
@@ -101,11 +99,11 @@ const Breakdown = () => {
         {rate.map((bar, i) => {
           if (ratez[bar]) {
           return (
-            <Text >{rate[i]} star &nbsp; <meter style={meterStyle} max={totalRatings} min="0.0" value={ratez[bar]}></meter></Text>
+            <Text key={i}>{rate[i]} star &nbsp; <meter  style={meterStyle} max={totalRatings} min="0.0" value={ratez[bar]}></meter></Text>
           )
           } else {
             return (
-              <Text > {rate[i]} star &nbsp; <meter style={meterStyle} max={totalRatings} min="0.0" value="0"></meter></Text>
+              <Text > {rate[i]} star &nbsp; <meter key={i} style={meterStyle} max={totalRatings} min="0.0" value="0"></meter></Text>
             )
           }
         })}
