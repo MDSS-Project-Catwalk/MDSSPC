@@ -14,7 +14,7 @@ function ReviewList() {
           value={tile} />
       )}
       {reviewList.list.length >= 2 && counter < reviewList.list.length ?
-        <p><button onClick={() => { setCounter(counter + 2) }}>Show More</button></p>
+        <p><button className="rr-ShowMore btn" onClick={() => { setCounter(counter + 2) }}>Show More</button></p>
         : null}
     </div>
   );

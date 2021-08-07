@@ -1,16 +1,32 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useContext } from 'react';
+import ProductContext from '../../productContext.jsx';
 import OutfitItemCard from './OutfitItemCard.jsx';
 import OutfitAddButton from './OutfitAddButton.jsx';
 
 function OutfitList(props) {
+
   const [addedOutfits, setAddedOufits] = useState([]);
   const [placeholderCards, setPlaceholderCards] = useState(3);
+  const [outfitOptions, setOutfitOptions] = useState([]);
+  const globalContext = useContext(ProductContext);
 
   let trackEl = useRef();
   let prevBtn = useRef();
   let nextBtn = useRef();
 
+  function addToOutfit () {
+    if (globalContext.outfitItemId !== undefined) {
+      globalContext.setOutfitItemId(globalContext.productId);
+      for (let i = 0; i < props.possibleOutfitOptions.length; i++) {
+        if (globalContext.outfitItemId === props.possibleOutfitOptions[i].id) {
+          setOutfitOptions([...outfitOptions, props.possibleOutfitOptions[i]]);
+        }
+      }
+    }
+  }
+
   useEffect(() => {
+    // setOutfitOptions(props);
     nextBtn.current.style="display: none";
     prevBtn.current.styke="display: none";
   })
@@ -52,8 +68,12 @@ function OutfitList(props) {
     <div className="carousel-container">
       <div className="carousel-inner">
         <div className="track" ref={trackEl}>
-          <OutfitAddButton addOutfit={props.addOutfit}/>
-          <OutfitItemCard />
+          <OutfitAddButton addToOutfit={addToOutfit} />
+          {
+            outfitOptions.map((option, index) => {
+              return <OutfitItemCard option={option} key={index} />
+            })
+          }
         </div>
       </div>
         <div className="nav">

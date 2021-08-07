@@ -51,7 +51,7 @@ function RelatedItemsList(props) {
     } else {
       prevBtn.current.style="display: block;"
     }
-    if (relatedItemCount <= 4 || count > 4) {
+    if (relatedItemCount <= 4 || count === 4) {
       nextBtn.current.style="display: block;"
     }
   }

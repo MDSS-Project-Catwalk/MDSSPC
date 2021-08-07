@@ -10,12 +10,12 @@ const questionAnswers = () => {
   const [data, setData] = useState({ product_id: null, results: [] });
   const [count, setCount] = useState(4);
   const tempData = useRef({ product_id: null, results: [] });
-  let seeMoreAnswers;
+  let seeMoreQuestions;
 
   useEffect(() => {
     axios.get('qa/questions/', {
       params: {
-        product_id: 25165,
+        product_id: 26165,
         count: 10000,
       },
     })
@@ -25,12 +25,12 @@ const questionAnswers = () => {
       });
   }, []);
 
-  const moreAnswersHandler = () => {
+  const moreQuestionsHandler = () => {
     setCount((currentState) => (currentState + 2));
   };
 
   if (data.results.length > count) {
-    seeMoreAnswers = <button type="button" onClick={moreAnswersHandler}> More Answered Questions </button>
+    seeMoreQuestions = <button type="button" className="btn" onClick={moreQuestionsHandler}> More Answered Questions </button>
   }
 
   return (
@@ -41,8 +41,8 @@ const questionAnswers = () => {
       </DataContext.Provider>
       <div id="question-modal" />
       <div className="question-footer">
-        {seeMoreAnswers}
-        <button type="button" onClick={() => (openQuestionModalHandler(data.product_id))}>
+        {seeMoreQuestions}
+        <button type="button" className="btn" onClick={() => (openQuestionModalHandler(data.product_id))}>
           Add a Question
         </button>
       </div>
