@@ -55,7 +55,7 @@ function OutfitList(props) {
     <div className="carousel-container">
       <div className="carousel-inner">
         <div className="track" ref={trackEl}>
-          <OutfitAddButton/>
+          <OutfitAddButton />
           {
             outfitOptions.map((option, index) => {
               return <OutfitItemCard option={option} key={index}/>
