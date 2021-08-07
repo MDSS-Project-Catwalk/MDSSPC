@@ -9,7 +9,6 @@ function RelatedItemCard(props) {
   const [isClicked, setIsClicked] = useState(false);
 
   const globalContext = useContext(ProductContext);
-  // console.log('from RelatedItemCard:', globalContext);
 
   function selectOutfitItem (e) {
     let currentProduct = parseInt(e.target.getAttribute('value'));
@@ -18,17 +17,14 @@ function RelatedItemCard(props) {
       setIsClicked(true);
       globalContext.setOutfitItemId(currentProduct);
       event.target.style.background="#fcffa4";
-      console.log('should be yellow and false:', isClicked);
-      console.log('current outfitItemId:', globalContext.outfitItemId);
     } else {
       event.target.style.background="#aaa";
       setIsClicked(false);
-      console.log('should be grey and true:', isClicked);
     }
   }
 
   return (
-    <div className="card-container" onClick={selectOutfitItem}>
+    <div className="card-container">
       <div className="card">
         <div className="card-header">
           <span>{props.product.category}</span>
@@ -44,6 +40,7 @@ function RelatedItemCard(props) {
         </div>
       <div className="img" >
         <img src={props.product.results[0].photos[0].url}
+             onClick={selectOutfitItem}
              ref={currentImage}
              className="card-image zoom"
              alt="Photo unavailable."
