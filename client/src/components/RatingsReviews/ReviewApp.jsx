@@ -39,10 +39,6 @@ import productContext from '../../productContext.jsx';
   position: relative;
   justify-content: center;
 `;
-<<<<<<< HEAD
-
-=======
->>>>>>> devtest
   const BoxThree = styled.div`
   flex: none;
   position: relative;
@@ -106,15 +102,8 @@ const Reviews = (props) => {
         <ContainerTwo>
 
       {Object.keys(meta).length ? <BoxThree>Sort &nbsp;
-<<<<<<< HEAD
-
           <Sort props={{sort, setSort}} />
         </BoxThree> : null}
-
-=======
-          <Sort props={{sort, setSort}} />
-        </BoxThree> : null}
->>>>>>> devtest
         <BoxFour>
         {!showModal ? <button className="rr-WriteReview btn" onClick={() => { setModal(!showModal) }}> Write Review </button> : null}
         </BoxFour>
