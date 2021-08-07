@@ -6,12 +6,7 @@ import axios from 'axios';
 import AddReview from './AddReview.jsx';
 import Breakdown from './Breakdown.jsx';
 import styled from 'styled-components';
-
-const Reviews = (props) => {
-  const [list, setList] = useState([]);
-  const [meta, setMeta] = useState({});
-  const [showModal, setModal] = useState(false);
-  const [sort, setSort] = useState(null);
+import productContext from '../../productContext.jsx';
 
   const Container = styled.div`
   display: flex;
@@ -44,7 +39,10 @@ const Reviews = (props) => {
   position: relative;
   justify-content: center;
 `;
+<<<<<<< HEAD
 
+=======
+>>>>>>> devtest
   const BoxThree = styled.div`
   flex: none;
   position: relative;
@@ -57,10 +55,18 @@ const Reviews = (props) => {
   left: 500px;
   `;
 
+const Reviews = (props) => {
+  const [list, setList] = useState([]);
+  const [meta, setMeta] = useState({});
+  const [showModal, setModal] = useState(false);
+  const [sort, setSort] = useState(undefined);
+
+  const { productId } = useContext(productContext);
+
   useEffect(() => {
     axios.get('/reviews', {
       params: {
-        product_id: 25167,
+        product_id: productId,
         sort: 'newest'
       }
     })
@@ -70,23 +76,22 @@ const Reviews = (props) => {
       .catch((error) => {
         alert('error', error);
       })
-  }, []
+  }, [productId]
   );
 
   useEffect(() => {
     axios.get('/reviews/meta', {
       params: {
-        product_id: 25167,
+        product_id: productId,
       },
     })
       .then((data) => {
         setMeta(data.data);
-        console.log(meta)
       })
       .catch((err) => {
         alert(err);
       });
-  }, []
+  }, [productId]
   )
 
   return (
@@ -101,10 +106,15 @@ const Reviews = (props) => {
         <ContainerTwo>
 
       {Object.keys(meta).length ? <BoxThree>Sort &nbsp;
+<<<<<<< HEAD
 
           <Sort props={{sort, setSort}} />
         </BoxThree> : null}
 
+=======
+          <Sort props={{sort, setSort}} />
+        </BoxThree> : null}
+>>>>>>> devtest
         <BoxFour>
         {!showModal ? <button className="rr-WriteReview btn" onClick={() => { setModal(!showModal) }}> Write Review </button> : null}
         </BoxFour>
