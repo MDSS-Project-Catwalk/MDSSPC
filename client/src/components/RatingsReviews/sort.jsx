@@ -30,7 +30,7 @@ const Sort = (props) => {
     <div className="link">
       <form>
         <label>
-          <select value={props.props.sort} className="dropdown" onChange={(event) => {console.log(event.target.value); filter(event.target.value);}}>
+          <select value={props.props.sort} className="dropdown" onChange={(event) => { filter(event.target.value);}}>
             <option value="newest">Newest</option>   
             <option value="helpful">Helpful</option>
             <option value="relevant">Relevant</option>

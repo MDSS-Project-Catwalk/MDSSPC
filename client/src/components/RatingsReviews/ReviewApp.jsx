@@ -51,7 +51,7 @@ import productContext from '../../productContext.jsx';
   left: 500px;
   `;
 
-const Reviews = (props) => {
+const Reviews = () => {
   const [list, setList] = useState([]);
   const [meta, setMeta] = useState({});
   const [showModal, setModal] = useState(false);
@@ -70,13 +70,9 @@ const Reviews = (props) => {
         setList(data.data.results);
       })
       .catch((error) => {
-        alert('error', error);
+        alert('error in getting productId', error);
       })
-  }, [productId]
-  );
-
-  useEffect(() => {
-    axios.get('/reviews/meta', {
+      axios.get('/reviews/meta', {
       params: {
         product_id: productId,
       },
@@ -87,6 +83,11 @@ const Reviews = (props) => {
       .catch((err) => {
         alert(err);
       });
+  }, [productId]
+  );
+
+  useEffect(() => {
+    
   }, [productId]
   )
 
