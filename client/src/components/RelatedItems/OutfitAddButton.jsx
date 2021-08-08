@@ -7,17 +7,10 @@ function OutfitAddButton(props) {
 
   const addOutfitButton = useRef();
 
-  function addToOutfit () {
-    if (globalContext.outfitItemId !== null) {
-      globalContext.setOutfitItemId(globalContext.productId);
-      console.log('Item ' + globalContext.outfitItemId);
-    }
-  }
-
   return (
     <div className="card-container">
       <div className="card">
-        <button className="add-outfit-button" ref={addOutfitButton} onClick={addToOutfit}>
+        <button className="add-outfit-button" ref={addOutfitButton} onClick={props.addToOutfit}>
         <span className="material-icons">add_circle</span>
         <span>Add to Outfit</span>
         </button>
